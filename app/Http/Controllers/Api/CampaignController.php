@@ -31,6 +31,15 @@ class CampaignController extends Controller
 
     public function filterAudience(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'status' => 'required|string',
+            'plan_expiry_date' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['status' => 'error', 'errors' => $validator->errors()], 422);
+        }
+
         $query = Customer::query();
 
         if ($request->status) {

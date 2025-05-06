@@ -31,6 +31,11 @@ class CampaignWebController extends Controller
 
     public function filter(Request $request)
     {
+        $request->validate([
+            'status' => 'required',
+            'plan_expiry_date' => 'required',
+        ]);
+
         $query = Customer::query();
 
         if ($request->status) {
