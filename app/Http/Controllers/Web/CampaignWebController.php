@@ -33,7 +33,7 @@ class CampaignWebController extends Controller
     {
         $request->validate([
             'status' => 'required',
-            'plan_expiry_date' => 'required',
+            'days_to_expiry' => 'required',
         ]);
 
         $query = Customer::query();

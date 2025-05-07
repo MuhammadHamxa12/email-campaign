@@ -33,7 +33,7 @@
                     "path": ["api", "campaigns", "filter"],
                     "query": [
                         { "key": "status", "value": "Paid" },
-                        { "key": "plan_expiry_date", "value": "10" }
+                        { "key": "days_to_expiry", "value": "10" }
                     ]
                 }
             }
